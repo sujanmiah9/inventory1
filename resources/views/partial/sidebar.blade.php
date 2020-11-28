@@ -15,16 +15,42 @@
             </li>
             <li class="heading">FEATURES</li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-file-text"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-cart-plus"></i>
                     <span class="nav-label">Pos</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="invoice.html">Invoice</a>
+                        
+                        <a href=""><i class="sidebar-item-icon fa fa-file-text"></i> Invoice</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-universal-access"></i>
+                    <span class="nav-label">Sales</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href=""><i class="sidebar-item-icon fa fa-universal-access"></i> Sales</a>
+                        <a href=""><i class="sidebar-item-icon fa fa-info-circle"></i> Sales Details</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-file-text"></i>
+                    <span class="nav-label">Purches</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href=""><i class="sidebar-item-icon fa fa-shopping-basket"></i> Purches</a>
+                        <a href=""><i class="sidebar-item-icon fa fa-info-circle"></i>Purches Details</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html"><i class="sidebar-item-icon fa fa-archive"></i>
+                    <span class="nav-label">Stock</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-users"></i>
                     <span class="nav-label">Customer</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
