@@ -20,6 +20,7 @@
         .content-wrapper{
             min-height: 0% !important;
             padding: 0 15px 0 15px;
+            margin-top: 25px;
             
         }
     </style>

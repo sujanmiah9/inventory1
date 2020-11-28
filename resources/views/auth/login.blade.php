@@ -21,9 +21,15 @@
         <div class="pt-5 mt-5">
             <h2 class="text-center text-white mb-5" >Welcome To POS System </h2>
         </div>
+        
     <form id="login-form" action="{{route('login')}}" method="post">
         @csrf
             <h2 class="login-title">Log in</h2>
+            <div class="mb-3 text-center">
+                @if (session()->has('error'))
+                <span class="text-red-800 bg-red-100 rounded py-2 px-4">{{session('error')}}</span>
+                    @endif
+            </div>
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
