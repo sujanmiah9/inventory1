@@ -19,6 +19,8 @@
     <style>
         .content-wrapper{
             min-height: 0% !important;
+            padding: 0 15px 0 15px;
+            
         }
     </style>
 </head>
@@ -37,6 +39,24 @@
             <!-- END PAGE CONTENT-->
             @include('partial.footer')
         </div>
+    </div>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-danger" href="{{route('logout')}}">Logout</a>
+        </div>
+        </div>
+    </div>
     </div>
     <!-- CORE PLUGINS-->
     <script src="{{asset('asset')}}/assets/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
