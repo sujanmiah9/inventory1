@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row pt-3">
-            <div class="col-md-8">
+            <div class="col-md-8 offset-2">
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{session('message')}}
@@ -23,13 +23,13 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-dark text-white">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Add Expense</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('daily.expense')}}" class="btn btn-success">Daily Expense</a>
+                                <a href="{{route('daily.expense')}}" class="btn btn-primary">Daily Expense</a>
                             </div>
                         </div>
                     </div>

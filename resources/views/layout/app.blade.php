@@ -16,14 +16,14 @@
     <!-- THEME STYLES-->
     <link href="{{asset('asset')}}/assets/css/main.min.css" rel="stylesheet" />
     <!-- PAGE LEVEL STYLES-->
-    <style>
+    {{-- <style>
         .content-wrapper{
             min-height: 0% !important;
             padding: 0 15px 0 15px;
             margin-top: 25px;
             
         }
-    </style>
+    </style> --}}
 </head>
 
 <body class="fixed-navbar">

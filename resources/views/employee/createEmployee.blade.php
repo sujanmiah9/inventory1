@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row pt-3">
-            <div class="col-md-8">
+            <div class="col-md-10 offset-1">
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{session('message')}}
@@ -18,7 +18,7 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-success text-white">
+                    <div class="card-header bg-dark text-white">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Add Employee</h4>

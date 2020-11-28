@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row pt-3">
-            <div class="col-md-10">
+            <div class="col-md-10 offset-1">
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{session('message')}}
@@ -18,13 +18,13 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-dark text-white">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Add Product</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.product')}}" class="btn btn-success">All Product</a>
+                                <a href="{{route('index.product')}}" class="btn btn-primary">All Product</a>
                             </div>
                         </div>
                     </div>
