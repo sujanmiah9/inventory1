@@ -35,7 +35,7 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-file-text"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-shopping-basket"></i>
                     <span class="nav-label">Purches</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
@@ -54,106 +54,88 @@
                     <span class="nav-label">Customer</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.customer')}}">Add Customers</a>
+                        <a href="{{route('create.customer')}}"><i class="fa fa-plus-circle"></i> Add Customers</a>
                     </li>
                     <li>
-                        <a href="{{route('index.customer')}}">All Customers</a>
+                        <a href="{{route('index.customer')}}"> <i class="fa fa-globe"></i> All Customers</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-user"></i>
                     <span class="nav-label">Employee</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.employee')}}">Add Employee</a>
+                        <a href="{{route('create.employee')}}"><i class="fa fa-plus-circle"></i> Add Employee</a>
                     </li>
                     <li>
-                        <a href="{{route('index.employee')}}">All Employee</a>
+                        <a href="{{route('index.employee')}}"><i class="fa fa-globe"></i> All Employee</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-user-circle"></i>
                     <span class="nav-label">Suppliers</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.supplier')}}">Add Supplier</a>
+                        <a href="{{route('create.supplier')}}"><i class="fa fa-plus-circle"></i> Add Supplier</a>
                     </li>
                     <li>
-                        <a href="{{route('index.supplier')}}">All Supplier</a>
+                        <a href="{{route('index.supplier')}}"><i class="fa fa-globe"></i> All Supplier</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-bar-chart"></i>
-                    <span class="nav-label">Salary</span><i class="fa fa-angle-left arrow"></i></a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a href="charts_flot.html">Add Advance Salary</a>
-                    </li>
-                    <li>
-                        <a href="charts_morris.html">All advance Salary</a>
-                    </li>
-                    <li>
-                        <a href="chartjs.html">Pay Salary</a>
-                    </li>
-                    <li>
-                        <a href="charts_sparkline.html">Last Month Salary</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-crosshairs"></i>
                     <span class="nav-label">Catagory</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.category')}}">Add Catagory</a>
+                        <a href="{{route('create.category')}}"><i class="fa fa-plus-circle"></i> Add Catagory</a>
                     </li>
                     <li>
-                        <a href="{{route('index.category')}}">All Catagory</a>
+                        <a href="{{route('index.category')}}"><i class="fa fa-globe"></i> All Catagory</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-product-hunt"></i>
                     <span class="nav-label">Products</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.product')}}">Add Products</a>
+                        <a href="{{route('create.product')}}"><i class="fa fa-plus-circle"></i> Add Products</a>
                     </li>
                     <li>
-                        <a href="{{route('index.product')}}">All Products</a>
+                        <a href="{{route('index.product')}}"><i class="fa fa-globe"></i> All Products</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-map"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-money"></i>
                     <span class="nav-label">Expenses</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.expense')}}">Add Expenses</a>
+                        <a href="{{route('create.expense')}}"><i class="fa fa-plus"></i> Add Expenses</a>
                     </li>
                     <li>
-                        <a href="{{route('daily.expense')}}">Daily Expenses</a>
+                        <a href="{{route('daily.expense')}}"><i class="fa fa-tint"></i> Daily Expenses</a>
                     </li>
                     <li>
-                        <a href="{{route('monthly.expense')}}">Monthly Expenses</a>
+                        <a href="{{route('monthly.expense')}}"><i class="fa fa-calendar-o"></i> Monthly Expenses</a>
                     </li>
                     <li>
-                        <a href="{{route('yearly.expense')}}">Yearly Expenses</a>
+                        <a href="{{route('yearly.expense')}}"><i class="fa fa-calendar"></i> Yearly Expenses</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-envelope"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-eye"></i>
                     <span class="nav-label">Attendence</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('daily.attendence')}}">Daily Attendence</a>
+                        <a href="{{route('daily.attendence')}}"><i class="fa fa-tint"></i> Daily Attendence</a>
                     </li>
                     <li>
-                        <a href="{{route('all.attendence')}}">All Attendence</a>
+                        <a href="{{route('all.attendence')}}"><i class="fa fa-globe"></i> All Attendence</a>
                     </li>
                 </ul>
             </li>
