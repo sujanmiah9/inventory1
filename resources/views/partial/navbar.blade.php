@@ -144,7 +144,7 @@
                     <a class="dropdown-item" href="profile.html"><i class="fa fa-cog"></i>Settings</a>
                     <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Support</a>
                     <li class="dropdown-divider"></li>
-                <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-power-off"></i>Logout</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-power-off"></i>Logout</a>
                 </ul>
             </li>
         </ul>
