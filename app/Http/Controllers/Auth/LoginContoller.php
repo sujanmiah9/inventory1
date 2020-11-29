@@ -18,12 +18,12 @@ class LoginContoller extends Controller
         ]);
         
         $datacheak=$request->only('email','password');
-       
+    
         if (auth()->attempt($datacheak)){
             if(auth()->user()->status==1){
                 return redirect()->route('dashboard');
             }
-           
+        
         }else{
             session()->flash('error','Username Or Password Does Not Match');
             return redirect()->back();
