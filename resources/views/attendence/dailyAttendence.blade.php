@@ -9,16 +9,6 @@
         <li class="breadcrumb-item active">Daily Attendence</li>
     </ol>
 </div>
-@if (session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-@endif
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{session('error')}}
-    </div>
-@endif
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -30,11 +20,11 @@
 @endif
 <div class="page-content fade-in-up">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">Daily Attendence</h4>
                 <div class="col-md-6">
-                    <a href="{{route('create.category')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Add</a>
+                    <a href="{{route('all.attendence')}}" class="btn btn-light btn-sm float-right"><i class="fa fa-plus"></i> All Attendence</a>
                 </div>
             </div>
         </div>
@@ -74,7 +64,7 @@
                 </tbody>
             </table>
             <div class="text-right">
-                <input type="submit" value="Add" class="btn btn-danger btn-lg">
+                <input type="submit" value="Add" class="btn btn-primary btn-lg">
             </div>
         </form>
         </div>

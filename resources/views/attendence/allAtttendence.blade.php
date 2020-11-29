@@ -30,11 +30,11 @@
 @endif
 <div class="page-content fade-in-up">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">All Attendence</h4>
                 <div class="col-md-6">
-                    <a href="{{route('create.category')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Add</a>
+                    <a href="{{route('daily.attendence')}}" class="btn btn-light btn-sm float-right"><i class="fa fa-plus"></i> Add</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                         <td>{{$key+1}}</td>
                         <td>{{$row->edit_date}}</td>
                         <td>
-                            <a href="{{route('edit.attendence', $row->edit_date)}}" class="btn btn-danger">edit</a>
+                            <a href="{{route('edit.attendence', $row->edit_date)}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
                         </td>
                         </tr>
                     @endforeach

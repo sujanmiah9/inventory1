@@ -2,17 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row pt-3">
-            <div class="col-md-8">
-                @if (session('message'))
-                    <div class="alert alert-success">
-                        {{session('message')}}
-                    </div>
-                @endif
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{session('error')}}
-                    </div>
-                @endif
+            <div class="col-md-8 offset-2">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -23,13 +13,13 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bgView">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Update Expense</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('daily.expense')}}" class="btn btn-success">Daily Expense</a>
+                                <a href="{{route('daily.expense')}}" class="btn btn-light btn-sm">Daily Expense</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +38,7 @@
                                 <input type="hidden" name="month" value="{{date('F')}}">
                                 <input type="hidden" name="year" value="{{date('Y')}}">
                             <div class="text-right pt-2">
-                                <input type="submit" value="Update" class="btn btn-primary btn-lg">
+                                <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg">
                             </div>
                         </form>
                     </div>

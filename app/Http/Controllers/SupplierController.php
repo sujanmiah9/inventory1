@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Throwable;
 
 class SupplierController extends Controller
 {
@@ -45,16 +46,43 @@ class SupplierController extends Controller
             $img_name = uniqid();
             $ext = $img->getClientOriginalExtension();
             $img_full_name = $img_name.'.'.$ext;
-
             $img_path = 'upload/';
             $img_url = $img_path.$img_full_name;
             $img->move($img_path,$img_full_name);
             $data['photo']=$img_url;
-            Supplier::create($data);
-            return Redirect()->back()->with('message','Insert Successfull!');
+            $supplier = Supplier::create($data);
+            try{
+                if($supplier){
+                    $notification = array(
+                        'message'=>'Supplier Added Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->back()->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong !!',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }else{
-            Supplier::create($data);
-            return Redirect()->back()->with('message','Insert Successfull!');
+            $supplier = Supplier::create($data);
+            try{
+                if($supplier){
+                    $notification = array(
+                        'message'=>'Supplier Added Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->back()->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }
     }
 
@@ -73,8 +101,14 @@ class SupplierController extends Controller
     public function destroy($id)
     {
         $deleteSupplier = Supplier::find($id);
-        $deleteSupplier->delete();
-        return Redirect()->back()->with('message', 'Delete Successfull!');
+        $delete = $deleteSupplier->delete();
+        if($delete){
+            $notification = array(
+                'message'=>'Data Deleted Successfull!',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function edit($id)
@@ -89,7 +123,7 @@ class SupplierController extends Controller
         $oldphoto = $updateSupplier->photo;
 
         $data = [
-            'name'=>$request->name,
+            'sup_name'=>$request->sup_name,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'shopName'=>$request->shopName,
@@ -112,11 +146,39 @@ class SupplierController extends Controller
             $img_url = $img_path.$img_full_name;
             $img->move($img_path,$img_full_name);
             $data['photo']=$img_url;
-            $updateSupplier->update($data);
-            return Redirect()->route('index.supplier')->with('message','Update Successfull!');
+            $update = $updateSupplier->update($data);
+            try{
+                if($update){
+                    $notification = array(
+                        'message'=>'Data Update Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->route('index.supplier')->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong!',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }else{
-            $updateSupplier->update($data);
-            return Redirect()->route('index.supplier')->with('message','Update Successfull!');
+            $update = $updateSupplier->update($data);
+            try{
+                if($update){
+                    $notification = array(
+                        'message'=>'Data Update Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->route('index.supplier')->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong!',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }
     }
 }

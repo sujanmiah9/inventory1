@@ -13,13 +13,13 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-dark text-white">
+                    <div class="card-header bgHead">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Add Product</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.product')}}" class="btn btn-primary">All Product</a>
+                                <a href="{{route('index.product')}}" class="btn btn-light btn-sm">All Product</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                 <input type="file" class="form-control" name="photo">
                             </div>
                             <div class="text-right pt-2">
-                                <input type="submit" value="Add" class="btn btn-primary btn-lg">
+                                <input type="submit" value="Add" class="btn btn-primary btn-block btn-lg">
                             </div>
                         </form>
                     </div>

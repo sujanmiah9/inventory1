@@ -28,13 +28,22 @@ class ExpenseController extends Controller
             'month'=>$request->month,
             'year'=>$request->year,
         ];
-        try
-        {
-            Expense::create($data);
-            return Redirect()->back()->with('message', 'Insert Successfull!');
+        $expense = Expense::create($data);
+        try{
+            if($expense){
+                $notification = array(
+                    'message'=>'Daily Expenses Added Successfull!',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }catch(Throwable $Exception)
         {
-            return Redirect()->back()->with('error', 'Error Successfull!');
+            $notification = array(
+                'message'=>'Something is Wrong !!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
         }
     }
 
@@ -58,21 +67,37 @@ class ExpenseController extends Controller
             'detail'=>$request->detail,
             'amount'=>$request->amount,
         ];
+        $d_update = $dailyUpdate->update($data);
         try
         {
-            $dailyUpdate->update($data);
-            return Redirect()->route('daily.expense')->with('message', 'Update Successfull!');
+            if($d_update){
+                $notification = array(
+                    'message'=>'Data Update Successfull!',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->route('daily.expense')->with($notification);
+            }
         }catch(Throwable $Exception)
         {
-            return Redirect()->back()->with('error', 'Error Successfull!');
+            $notification = array(
+                'message'=>'Something is Wrong !!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
         }
     }
 
     public function destroyDaily($id)
     {
         $deleteDaily = Expense::find($id);
-        $deleteDaily->delete();
-        return Redirect()->back()->with('message', 'Delete Successfull!');
+        $d_delete = $deleteDaily->delete();
+        if($d_delete){
+            $notification = array(
+                'message'=>'Data Delete Successfull!',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function monthly()
@@ -95,21 +120,37 @@ class ExpenseController extends Controller
             'detail'=>$request->detail,
             'amount'=>$request->amount,
         ];
+        $m_update = $monthUpdate->update($data);
         try
         {
-            $monthUpdate->update($data);
-            return Redirect()->route('monthly.expense')->with('message', 'Update Successfull!');
+            if($m_update){
+                $notification = array(
+                    'message'=>'Data Update Successfull!',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->route('monthly.expense')->with($notification);
+            }
         }catch(Throwable $Exception)
         {
-            return Redirect()->back()->with('error', 'Error Successfull!');
+            $notification = array(
+                'message'=>'Something is Wrong !!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
         }
     }
 
     public function destroyMonth($id)
     {
         $deleteMonth = Expense::find($id);
-        $deleteMonth->delete();
-        return Redirect()->back()->with('message', 'Delete Successfull!');
+        $m_delete = $deleteMonth->delete();
+        if($m_delete){
+            $notification = array(
+                'message'=>'Data Delete Successfull!',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function yearly()
@@ -132,20 +173,37 @@ class ExpenseController extends Controller
             'detail'=>$request->detail,
             'amount'=>$request->amount,
         ];
+        $y_update = $yearUpdate->update($data);
         try
         {
-            $yearUpdate->update($data);
+            if($y_update){
+                $notification = array(
+                    'message'=>'Data Update Successfull!',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->route('monthly.expense')->with($notification);
+            }
             return Redirect()->route('yearly.expense')->with('message', 'Update Successfull!');
         }catch(Throwable $Exception)
         {
-            return Redirect()->back()->with('error', 'Error Successfull!');
+            $notification = array(
+                'message'=>'Something is Wrong !!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
         }
     }
 
     public function destroyYear($id)
     {
         $deleteYear = Expense::find($id);
-        $deleteYear->delete();
-        return Redirect()->back()->with('message', 'Delete Successfull!');
+        $y_delete = $deleteYear->delete();
+        if($y_delete){
+            $notification = array(
+                'message'=>'Data Delete Successfull!',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 }

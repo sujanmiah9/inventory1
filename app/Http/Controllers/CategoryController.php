@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Throwable;
 
 class CategoryController extends Controller
 {
@@ -23,8 +24,22 @@ class CategoryController extends Controller
             'cat_name'=>$request->cat_name,
             'description'=>$request->description,
         ];
-        Category::create($data);
-        return Redirect()->back()->with('message', 'Insert Successfully!');
+        $category = Category::create($data);
+        try{
+            if($category){
+                $notification = array(
+                    'message'=>'Successfully Category Inserted',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->back()->with($notification);
+            }
+        }catch(Throwable $exception){
+            $notification = array(
+                'message'=>'Something is Wrong!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function index()
@@ -42,8 +57,14 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $deleteCategory = Category::find($id);
-        $deleteCategory->delete();
-        return Redirect()->back()->with('message', 'Delete Successfully!');
+        $delete = $deleteCategory->delete();
+        if($delete){
+            $notification = array(
+                'message'=>'Data Deleted Succesxfull !',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function edit($id)
@@ -60,7 +81,21 @@ class CategoryController extends Controller
             'cat_name'=>$request->cat_name,
             'description'=>$request->description,
         ];
-        $updateCategory->update($data);
-        return Redirect()->route('index.category')->with('message', 'Update Successfully!');
+        $update = $updateCategory->update($data);
+        try{
+            if($update){
+                $notification = array(
+                    'message'=>'Data Update Successfull!',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->route('index.category')->with($notification);
+            }
+        }catch(Throwable $exception){
+            $notification = array(
+                'message'=>'Something is Wrong!',
+                'alert-type'=>'error',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 }

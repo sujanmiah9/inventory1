@@ -9,11 +9,6 @@
         <li class="breadcrumb-item active">Yearly Expense</li>
     </ol>
 </div>
-@if (session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-@endif
 @php
 $year = date('Y');
 $total = DB::table('expenses')->where('year',$year)->sum('amount');
@@ -24,7 +19,7 @@ $total = DB::table('expenses')->where('year',$year)->sum('amount');
     <span style="font-weight:bold; font-size:25px; color:blue">Yearly Expense: {{date('Y')}}</span>
 <div class="page-content fade-in-up">
     <div class="card pt-2">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">Yearly Expense</h4>
                 <div class="col-md-6 text-right">
@@ -63,8 +58,8 @@ $total = DB::table('expenses')->where('year',$year)->sum('amount');
                             <td>{{$row->amount}}</td>
                             <td>{{$row->date}}</td>
                             <td>
-                                <a href="{{route('yearEdit.expense',$row->id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{route('delete.yearEx', $row->id)}}" class="btn btn-danger">Delete</a>
+                                <a href="{{route('yearEdit.expense',$row->id)}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="{{route('delete.yearEx', $row->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr> 
                     @endforeach

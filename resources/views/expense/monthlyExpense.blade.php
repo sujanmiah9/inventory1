@@ -9,11 +9,6 @@
         <li class="breadcrumb-item active">Monthly Expense</li>
     </ol>
 </div>
-@if (session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-@endif
 @php
     $month = date('F');
     $total = DB::table('expenses')->where('month',$month)->sum('amount');
@@ -24,7 +19,7 @@
 <span style="font-weight:bold; font-size:25px; color:blue">Monthly Expense: {{date('F')}}</span>
 <div class="page-content fade-in-up">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">Monthly Expense</h4>
                 <div class="col-md-6 text-right">
@@ -63,8 +58,8 @@
                             <td>{{$row->amount}}</td>
                             <td>{{$row->date}}</td>
                             <td>
-                                <a href="{{route('monthEdit.expense',$row->id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{route('delete.monthEx', $row->id)}}" class="btn btn-danger">Delete</a>
+                                <a href="{{route('monthEdit.expense',$row->id)}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="{{route('delete.monthEx', $row->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr> 
                     @endforeach

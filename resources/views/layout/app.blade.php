@@ -8,24 +8,23 @@
     <title>Inventory System</title>
     <!-- GLOBAL MAINLY STYLES-->
     <link rel="icon" href="{{asset('upload')}}/icon.png" type="image/x-icon"/>
-    <link href="{{asset('asset')}}/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{asset('asset')}}/assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{asset('asset')}}/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="{{asset('asset')}}/assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
-    <!-- PLUGINS STYLES-->
-    <link href="{{asset('asset')}}/assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <link href="{{asset('asset')}}/assets/vendors/DataTables/datatables.min.css" rel="stylesheet" />
+    <link href="{{asset('asset')}}/assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <!-- THEME STYLES-->
     <link href="{{asset('asset')}}/assets/css/main.min.css" rel="stylesheet" />
-    <!-- PAGE LEVEL STYLES-->
-    {{-- <style>
-        .content-wrapper{
-            min-height: 0% !important;
-            padding: 0 15px 0 15px;
-            margin-top: 25px;
-            
+    <style>
+        .bgView{
+            background-color: #5f27cd;
+            color: #fff;
         }
-    </style> --}}
+        .bgHead{
+            background-color: #1B1464;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body class="fixed-navbar">
@@ -65,53 +64,29 @@
     <script src="{{asset('asset')}}/assets/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/DataTables/datatables.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/jquery/dist/dataTables.bootstrap4.js"></script>
-    <script src="{{asset('asset')}}/assets/vendors/jquery/dist/datatables-demo.js"></script>
     <script src="{{asset('asset')}}/assets/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
-    <script src="{{asset('asset')}}/assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- PAGE LEVEL PLUGINS-->
-    <script src="{{asset('asset')}}/assets/vendors/chart.js/dist/Chart.min.js" type="text/javascript"></script>
-    <script src="{{asset('asset')}}/assets/vendors/jvectormap/jquery-jvectormap-2.0.3.min.js" type="text/javascript"></script>
-    <script src="{{asset('asset')}}/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-    <script src="{{asset('asset')}}/assets/vendors/jvectormap/jquery-jvectormap-us-aea-en.js" type="text/javascript"></script>
-    <!-- CORE SCRIPTS-->
     <script src="{{asset('asset')}}/assets/js/app.min.js" type="text/javascript"></script>
-    <!-- PAGE LEVEL SCRIPTS-->
-    <script src="{{asset('asset')}}/assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $('#example-table').DataTable({
-                pageLength: 10,
-                //"ajax": './assets/demo/data/table_data.json',
-                /*"columns": [
-                    { "data": "name" },
-                    { "data": "office" },
-                    { "data": "extn" },
-                    { "data": "start_date" },
-                    { "data": "salary" }
-                ]*/
-            });
-        })
+        @if(Session::has('message'))
+            var type ="{{Session::get('alert-type', 'info')}}"
+            switch(type){
+            case 'info':
+            toastr.info("{{Session::get('message')}}");
+            break;
+            case 'success':
+            toastr.success("{{Session::get('message')}}");
+            break;
+            case 'warning':
+            toastr.warning("{{Session::get('message')}}");
+            break;
+            case 'error':
+            toastr.error("{{Session::get('message')}}");
+            break;
+            }
+        @endif
     </script>
-    <script type="text/javascript">
-    @if(Session::has('message'))
-        var type ="{{Session::get('alert-type', 'info')}}"
-        switch(type){
-        case 'info':
-        toastr.info("{{Session::get('message')}}");
-        break;
-        case 'success':
-        toastr.success("{{Session::get('message')}}");
-        break;
-        case 'error':
-        toastr.error("{{Session::get('message')}}");
-        break;
-        }
-    @endif
-  </script>
 </body>
-
 </html>

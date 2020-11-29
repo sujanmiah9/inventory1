@@ -30,11 +30,11 @@
 @endif
 <div class="page-content fade-in-up">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">Update Attendence</h4>
                 <div class="col-md-6">
-                    <a href="{{route('create.category')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Add</a>
+                    <a href="{{route('all.attendence')}}" class="btn btn-light btn-sm float-right"><i class="fa fa-plus"></i> All Attendence</a>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                 </tbody>
             </table>
             <div class="text-right">
-                <input type="submit" value="Update" class="btn btn-danger btn-lg">
+                <input type="submit" value="Update" class="btn btn-primary btn-lg">
             </div>
         </form>
         </div>

@@ -2,15 +2,15 @@
 @section('content')
     <div class="container">
         <div class="row pt-3">
-            <div class="col-md-10">
+            <div class="col-md-10 offset-1">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bgView">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Update Supplier</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.supplier')}}" class="btn btn-success">All Supplier</a>
+                                <a href="{{route('index.supplier')}}" class="btn btn-light btn-sm">All Supplier</a>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="">Supplier Name</label>
-                                <input type="text" class="form-control" name="name" value="{{$editSupplier->name}}">
+                                <input type="text" class="form-control" name="sup_name" value="{{$editSupplier->sup_name}}">
                             </div>
                             <div class="form-group">
                                 <label for="">Supplier Email</label>
@@ -82,7 +82,7 @@
                                 <textarea name="address" id="" cols="30" rows="3" class="form-control"> {{$editSupplier->address}}</textarea>
                             </div>
                             <div class="text-right pt-2">
-                                <input type="submit" value="Update" class="btn btn-dark btn-lg">
+                                <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg">
                             </div>
                         </form>
                     </div>

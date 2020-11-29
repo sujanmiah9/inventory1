@@ -8,6 +8,7 @@ use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Throwable;
 
 class ProductController extends Controller
 {
@@ -58,20 +59,35 @@ class ProductController extends Controller
             $img->move($img_path,$img_full_name);
             $data['photo']=$img_url;
             $product = Product::create($data);
-            if($product){
+            try{
+                if($product){
+                    $notification = array(
+                        'message'=>'Product Added Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->back()->with($notification);
+                }
+            }catch(Throwable $exception){
                 $notification = array(
-                    'message'=>'Successfully Product Inserted',
-                    'alert-type'=>'success',
+                    'message'=>'Something is Wrong !!',
+                    'alert-type'=>'error',
                 );
                 return Redirect()->back()->with($notification);
             }
-            
         }else{
             $product = Product::create($data);
-            if($product){
+            try{
+                if($product){
+                    $notification = array(
+                        'message'=>'Product Added Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->back()->with($notification);
+                }
+            }catch(Throwable $exception){
                 $notification = array(
-                    'message'=>'Successfully Product Inserted',
-                    'alert-type'=>'success',
+                    'message'=>'Something is Wrong !!',
+                    'alert-type'=>'error',
                 );
                 return Redirect()->back()->with($notification);
             }
@@ -97,8 +113,14 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $deleteProduct = Product::find($id);
-        $deleteProduct->delete();
-        return Redirect()->back()->with('message', 'Delete Successfull!');
+        $delete = $deleteProduct->delete();
+        if($delete){
+            $notification = array(
+                'message'=>'Data Deleted Successfull !',
+                'alert-type'=>'success',
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 
     public function edit($id)
@@ -137,11 +159,39 @@ class ProductController extends Controller
             $img_url = $img_path.$img_full_name;
             $img->move($img_path,$img_full_name);
             $data['photo']=$img_url;
-            $updateProduct->update($data);
-            return Redirect()->route('index.product')->with('message','Update Successfull!');
+            $update = $updateProduct->update($data);
+            try{
+                if($update){
+                    $notification = array(
+                        'message'=>'Data Update Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->route('index.product')->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong!',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }else{
-            $updateProduct->update($data);
-            return Redirect()->route('index.product')->with('message','Update Successfull!');
+            $update = $updateProduct->update($data);
+            try{
+                if($update){
+                    $notification = array(
+                        'message'=>'Data Update Successfull!',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->route('index.product')->with($notification);
+                }
+            }catch(Throwable $exception){
+                $notification = array(
+                    'message'=>'Something is Wrong!',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }
         
     }

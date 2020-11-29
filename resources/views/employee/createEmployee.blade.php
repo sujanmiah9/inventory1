@@ -3,11 +3,6 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-md-10 offset-1">
-                @if (session('message'))
-                    <div class="alert alert-success">
-                        {{session('message')}}
-                    </div>
-                @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -18,13 +13,13 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-dark text-white">
+                    <div class="card-header bgHead">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4>Add Employee</h4>
+                                <h4 class="text-white">Add Employee</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.employee')}}" class="btn btn-primary">All Employee</a>
+                                <a href="{{route('index.employee')}}" class="btn btn-light btn-sm">All Employee</a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +71,7 @@
                                 <textarea name="address" id="" cols="30" rows="3" class="form-control"></textarea>
                             </div>
                             <div class="text-right pt-2">
-                                <input type="submit" value="Add" class="btn btn-primary btn-lg">
+                                <input type="submit" value="Add" class="btn btn-primary btn-block btn-lg">
                             </div>
                         </form>
                     </div>

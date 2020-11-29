@@ -9,18 +9,13 @@
         <li class="breadcrumb-item active">All Supplier</li>
     </ol>
 </div>
-@if (session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-@endif
 <div class="page-content fade-in-up">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bgView">
             <div class="row">
                 <h4 class="col-md-6">All Supplier</h4>
                 <div class="col-md-6">
-                    <a href="{{route('create.supplier')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i> Add</a>
+                    <a href="{{route('create.supplier')}}" class="btn btn-light btn-sm float-right"><i class="fa fa-plus"></i> Add</a>
                 </div>
             </div>
         </div>
@@ -52,7 +47,7 @@
                     @foreach ($suppliers as $key=> $row)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$row->name}}</td>
+                            <td>{{$row->sup_name}}</td>
                             <td>{{$row->phone}}</td>
                             <td>{{$row->address}}</td>
                             <td>{{$row->salary}}</td>
@@ -60,9 +55,9 @@
                                 <img src="{{URL::to($row->photo)}}" style="height: 80px; width:80px" alt="">
                             </td>
                             <td>
-                                <a href="{{route('edit.supplier',$row->id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{route('delete.supplier',$row->id)}}" class="btn btn-danger">Delete</a>
-                                <a href="{{route('view.supplier',$row->id)}}" class="btn btn-success">View</a>
+                                <a href="{{route('edit.supplier',$row->id)}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="{{route('delete.supplier',$row->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="{{route('view.supplier',$row->id)}}" class="btn btn-success"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr> 
                     @endforeach

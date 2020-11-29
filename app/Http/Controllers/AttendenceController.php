@@ -7,6 +7,7 @@ use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Throwable;
 
 class AttendenceController extends Controller
 {
@@ -25,8 +26,13 @@ class AttendenceController extends Controller
         $date = $request->date;
         $check = DB::table('attendences')->where('date',$date)->first();
         if($check){
-            return Redirect()->back()->with('error','Attendence Already Taken');
-        }else{
+                $notification = array(
+                    'message'=>'Attendence Already Taken',
+                    'alert-type'=>'error',
+                );
+                return Redirect()->back()->with($notification);
+            }
+        else{
             foreach($request->emp_id as $id)
             {
                 $data[] = [
@@ -37,8 +43,18 @@ class AttendenceController extends Controller
                     'month'=>$request->month
                 ];
             }
-            DB::table('attendences')->insert($data);
-            return Redirect()->back()->with('message','Successfully Added');
+            $attendence = DB::table('attendences')->insert($data);
+            try{
+                if($attendence){
+                    $notification = array(
+                        'message'=>'Successfully Attendence Taken',
+                        'alert-type'=>'success',
+                    );
+                    return Redirect()->back()->with($notification);
+                }
+            }catch(Throwable $exception){
+                return Redirect()->back();
+            }
         }   
     }
 

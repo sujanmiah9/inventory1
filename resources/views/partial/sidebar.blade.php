@@ -50,18 +50,6 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-users"></i>
-                    <span class="nav-label">Customer</span><i class="fa fa-angle-left arrow"></i></a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a href="{{route('create.customer')}}"><i class="fa fa-plus-circle"></i> Add Customers</a>
-                    </li>
-                    <li>
-                        <a href="{{route('index.customer')}}"> <i class="fa fa-globe"></i> All Customers</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-user"></i>
                     <span class="nav-label">Employee</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
