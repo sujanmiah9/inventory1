@@ -57,11 +57,24 @@ class ProductController extends Controller
             $img_url = $img_path.$img_full_name;
             $img->move($img_path,$img_full_name);
             $data['photo']=$img_url;
-            Product::create($data);
-            return Redirect()->back()->with('message','Insert Successfull!');
+            $product = Product::create($data);
+            if($product){
+                $notification = array(
+                    'message'=>'Successfully Product Inserted',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->back()->with($notification);
+            }
+            
         }else{
-            Product::create($data);
-            return Redirect()->back()->with('message','Insert Successfull!');
+            $product = Product::create($data);
+            if($product){
+                $notification = array(
+                    'message'=>'Successfully Product Inserted',
+                    'alert-type'=>'success',
+                );
+                return Redirect()->back()->with($notification);
+            }
         }
     }
 

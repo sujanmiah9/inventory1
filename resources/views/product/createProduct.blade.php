@@ -3,11 +3,6 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-md-10 offset-1">
-                @if (session('message'))
-                    <div class="alert alert-success">
-                        {{session('message')}}
-                    </div>
-                @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

@@ -14,6 +14,7 @@
     <!-- PLUGINS STYLES-->
     <link href="{{asset('asset')}}/assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <link href="{{asset('asset')}}/assets/vendors/DataTables/datatables.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <!-- THEME STYLES-->
     <link href="{{asset('asset')}}/assets/css/main.min.css" rel="stylesheet" />
     <!-- PAGE LEVEL STYLES-->
@@ -78,6 +79,8 @@
     <script src="{{asset('asset')}}/assets/js/app.min.js" type="text/javascript"></script>
     <!-- PAGE LEVEL SCRIPTS-->
     <script src="{{asset('asset')}}/assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">
         $(function() {
             $('#example-table').DataTable({
@@ -93,6 +96,22 @@
             });
         })
     </script>
+    <script type="text/javascript">
+    @if(Session::has('message'))
+        var type ="{{Session::get('alert-type', 'info')}}"
+        switch(type){
+        case 'info':
+        toastr.info("{{Session::get('message')}}");
+        break;
+        case 'success':
+        toastr.success("{{Session::get('message')}}");
+        break;
+        case 'error':
+        toastr.error("{{Session::get('message')}}");
+        break;
+        }
+    @endif
+  </script>
 </body>
 
 </html>
