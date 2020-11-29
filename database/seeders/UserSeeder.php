@@ -15,10 +15,56 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' =>'admin',
+            'name' =>'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345'), // password
             'status' => 1,
+            'photo'=>'upload/5fc3341d9ad9b.png',
+            
+        ]);
+
+        User::create([
+            'name' =>'Nehal',
+            'email' => 'nehal@gmail.com',
+            'password' => bcrypt('12345'), // password
+            'status' => 1,
+            'photo'=>'upload/nehal.JPG',
+            
+        ]);
+
+        User::create([
+            'name' =>'Sujan',
+            'email' => 'sujan@gmail.com',
+            'password' => bcrypt('12345'), // password
+            'status' => 1,
+            'photo'=>'upload/sujan.jpg',
+            
+        ]);
+
+        User::create([
+            'name' =>'Rafsan',
+            'email' => 'rafsan@gmail.com',
+            'password' => bcrypt('12345'), // password
+            'status' => 1,
+            'photo'=>'upload/rafsan.jpg',
+            
+        ]);
+
+        User::create([
+            'name' =>'Roni',
+            'email' => 'roni@gmail.com',
+            'password' => bcrypt('12345'), // password
+            'status' => 1,
+            'photo'=>'upload/roni.png',
+            
+        ]);
+
+        User::create([
+            'name' =>'Mubarok',
+            'email' => 'mubarok@gmail.com',
+            'password' => bcrypt('12345'), // password
+            'status' => 1,
+            'photo'=>'upload/mubarok.png',
             
         ]);
     }
