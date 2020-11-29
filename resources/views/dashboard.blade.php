@@ -146,7 +146,7 @@
                     <ul class="media-list media-list-divider m-0">
                         <li class="media">
                             <a class="media-img" href="javascript:;">
-                                <img src="./assets/img/image.jpg" width="50px;" />
+                            <img src="{{asset('upload')}}/5fbfca084de9d.png" width="50px;" />
                             </a>
                             <div class="media-body">
                                 <div class="media-heading">
@@ -158,7 +158,7 @@
                         </li>
                         <li class="media">
                             <a class="media-img" href="javascript:;">
-                                <img src="./assets/img/image.jpg" width="50px;" />
+                                <img src="{{asset('upload')}}/5fbfca084de9d.png" width="50px;" />
                             </a>
                             <div class="media-body">
                                 <div class="media-heading">
@@ -170,7 +170,7 @@
                         </li>
                         <li class="media">
                             <a class="media-img" href="javascript:;">
-                                <img src="./assets/img/image.jpg" width="50px;" />
+                                <img src="{{asset('upload')}}/5fbfca084de9d.png" width="50px;" />
                             </a>
                             <div class="media-body">
                                 <div class="media-heading">
@@ -182,7 +182,7 @@
                         </li>
                         <li class="media">
                             <a class="media-img" href="javascript:;">
-                                <img src="./assets/img/image.jpg" width="50px;" />
+                                <img src="{{asset('upload')}}/5fbfca084de9d.png" width="50px;" />
                             </a>
                             <div class="media-body">
                                 <div class="media-heading">

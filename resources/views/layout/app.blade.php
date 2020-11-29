@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Inventory System</title>
     <!-- GLOBAL MAINLY STYLES-->
+    <link rel="icon" href="{{asset('upload')}}/icon.png" type="image/x-icon"/>
     <link href="{{asset('asset')}}/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{asset('asset')}}/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="{{asset('asset')}}/assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
