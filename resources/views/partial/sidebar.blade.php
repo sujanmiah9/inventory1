@@ -2,7 +2,7 @@
     <div id="sidebar-collapse">
         <div class="admin-block d-flex">
             <div>
-            <img src="{{auth()->user()->photo}}"  style="height:50px; width:50px; border-radius:50%;" />
+            <img src="{{asset('/'.auth()->user()->photo)}}"  style="height:50px; width:50px; border-radius:50%;" />
             </div>
             <div class="admin-info">
             <div class="font-strong">{{auth()->user()->name}}</div><small>Administrator</small></div>
