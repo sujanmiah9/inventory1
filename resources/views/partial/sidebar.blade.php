@@ -5,7 +5,7 @@
             <img src="{{asset('asset')}}/assets/img/admin-avatar.png" width="45px" />
             </div>
             <div class="admin-info">
-                <div class="font-strong">Wahid Sujan</div><small>Administrator</small></div>
+                <div class="font-strong">Admin</div><small>Administrator</small></div>
         </div>
         <ul class="side-menu metismenu">
             <li>
