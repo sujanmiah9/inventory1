@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-md-12 ">
-                <div class="card">
-                    <div class="card-header bgView">
+                <div class="card shadow">
+                    <div class="card-header cardB bg-light">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Update Employee</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.employee')}}" class="btn btn-light btn-sm">All Employee</a>
+                                <a href="{{route('index.employee')}}" class="btn btn-primary btn-sm">All Employee</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <textarea name="address" id="" cols="30" rows="3" class="form-control"> {{$editEmployee->address}}</textarea>
                             </div>
                             <div class="text-right pt-2">
-                                <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg">
+                                <input type="submit" value="Update" class="btn btn-primary btn-lg">
                             </div>
                         </form>
                     </div>

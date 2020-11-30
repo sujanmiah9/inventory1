@@ -8,14 +8,14 @@
                         {{session('message')}}
                     </div>
                 @endif
-                <div class="card">
-                    <div class="card-header bgView">
+                <div class="card shadow">
+                    <div class="card-header cardB bg-light">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Update Category</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('index.category')}}" class="btn btn-light btn-sm">All Category</a>
+                                <a href="{{route('index.category')}}" class="btn btn-primary btn-sm">All Category</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                 <textarea name="description" id="" cols="30" rows="3" class="form-control">{{$editCategory->description}}</textarea>
                             </div>
                             <div class="text-right pt-2">
-                                <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg">
+                                <input type="submit" value="Update" class="btn btn-primary btn-lg">
                             </div>
                         </form>
                     </div>

@@ -19,12 +19,12 @@
     </div>
 @endif
 <div class="page-content fade-in-up">
-    <div class="card">
-        <div class="card-header bgView">
+    <div class="card shadow">
+        <div class="card-header cardB bg-light">
             <div class="row">
                 <h4 class="col-md-6">Daily Attendence</h4>
                 <div class="col-md-6">
-                    <a href="{{route('all.attendence')}}" class="btn btn-light btn-sm float-right"><i class="fa fa-plus"></i> All Attendence</a>
+                    <a href="{{route('all.attendence')}}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> All Attendence</a>
                 </div>
             </div>
         </div>

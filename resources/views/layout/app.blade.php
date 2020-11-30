@@ -20,10 +20,32 @@
             background-color: #5f27cd;
             color: #fff;
         }
-        .bgHead{
-            background-color: #1B1464;
-            color: #fff;
+        .cardP{
+            border-top: 5px solid #1abc9c;
         }
+        .cardB{
+            border-bottom: 4px solid #1abc9c;
+        }
+        .cardL{
+            border-top: 5px solid #2ecc71;
+        }
+        .cardR{
+            border-top: 5px solid #3498db;
+        }
+        label{
+    font-weight:bold;
+    }
+    .form-group input::-webkit-input-placeholder {
+        color:#ced6e0;
+        font-size:15px;
+    }
+    .form-group select{
+        font-size:15px;
+        color:#ced6e0;
+    }
+    .shadow{
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    }
     </style>
 </head>
 
@@ -65,6 +87,7 @@
     <script src="{{asset('asset')}}/assets/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
+    <script src="{{asset('asset')}}/assets/vendors/DataTables/datatables.min.js" type="text/javascript"></script>
     <script src="{{asset('asset')}}/assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <!-- PAGE LEVEL PLUGINS-->
     <script src="{{asset('asset')}}/assets/vendors/chart.js/dist/Chart.min.js" type="text/javascript"></script>
@@ -74,8 +97,24 @@
     <!-- CORE SCRIPTS-->
     <script src="{{asset('asset')}}/assets/js/app.min.js" type="text/javascript"></script>
     <!-- PAGE LEVEL SCRIPTS-->
-    <script src="./assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
+    <script src="{{asset('asset')}}/assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#example-table').DataTable({
+                pageLength: 10,
+                //"ajax": './assets/demo/data/table_data.json',
+                /*"columns": [
+                    { "data": "name" },
+                    { "data": "office" },
+                    { "data": "extn" },
+                    { "data": "start_date" },
+                    { "data": "salary" }
+                ]*/
+            });
+        })
+    </script>
     <script type="text/javascript">
         @if(Session::has('message'))
             var type ="{{Session::get('alert-type', 'info')}}"

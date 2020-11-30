@@ -12,14 +12,14 @@
                         </ul>
                     </div>
                 @endif
-                <div class="card">
-                    <div class="card-header bgView">
+                <div class="card shadow">
+                    <div class="card-header cardB bg-light">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Update Expense</h4>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{route('daily.expense')}}" class="btn btn-light btn-sm">Yearly Expense</a>
+                                <a href="{{route('daily.expense')}}" class="btn btn-primary btn-sm">Yearly Expense</a>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                                 <input type="hidden" name="month" value="{{date('F')}}">
                                 <input type="hidden" name="year" value="{{date('Y')}}">
                             <div class="text-right pt-2">
-                                <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg">
+                                <input type="submit" value="Update" class="btn btn-primary btn-lg">
                             </div>
                         </form>
                     </div>
