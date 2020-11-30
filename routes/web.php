@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -95,6 +96,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     //Logout
     Route::get('admin/logout',[LoginContoller::class,'logout'])->name('logout');
+
+    //purchase
+    Route::get('create/purchase',[PurchaseController::class,'create'])->name('create.purchase');
 
 });
 

@@ -30,7 +30,7 @@ class AttendenceController extends Controller
                     'message'=>'Attendence Already Taken',
                     'alert-type'=>'error',
                 );
-                return Redirect()->back()->with($notification);
+                return redirect()->back()->with($notification);
             }
         else{
             foreach($request->emp_id as $id)
@@ -50,10 +50,10 @@ class AttendenceController extends Controller
                         'message'=>'Successfully Attendence Taken',
                         'alert-type'=>'success',
                     );
-                    return Redirect()->back()->with($notification);
+                    return redirect()->back()->with($notification);
                 }
             }catch(Throwable $exception){
-                return Redirect()->back();
+                return redirect()->back();
             }
         }   
     }
@@ -77,6 +77,7 @@ class AttendenceController extends Controller
 
     public function updateAttendence(Request $request)
     {
+    
         foreach($request->id as $id)
             {
                 $data = [
@@ -86,10 +87,6 @@ class AttendenceController extends Controller
                     'edit_date'=>$request->edit_date,
                     'month'=>$request->month
                 ];
-                
-            //     $update = DB::table('attendences')->where(['date'=>$request->date, 'id'=>$id])->first();
-                
-            //     $update->update($data);
             }
 
     }

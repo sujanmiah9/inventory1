@@ -52,8 +52,8 @@
                                 <td>
                                     <div class="form-group">
                                         <input type="hidden" value="{{$row->id}}" name="emp_id[]">
-                                        <input type="radio" value="Present" name="attendence[{{$row->id}}]"> Present
-                                        <input type="radio" value="Absence" name="attendence[{{$row->id}}]"> Absence
+                                        <input type="radio" value="Present" name="attendence[{{$row->id}}]" required>  Present
+                                        <input type="radio" value="Absence" name="attendence[{{$row->id}}]" > Absence
                                         <input type="hidden" value="{{date('d/m/y')}}" name="date">
                                         <input type="hidden" value="{{date('d_m_y')}}" name="edit_date">
                                         <input type="hidden" value="{{date('F')}}" name="month">
