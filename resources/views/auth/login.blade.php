@@ -10,9 +10,9 @@
     <link rel="icon" href="{{asset('upload')}}/icon.png" type="image/x-icon"/>
     <link href="{{asset('asset')}}/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- THEME STYLES-->
-<link href="{{asset('asset')}}/assets/css/main.css" rel="stylesheet" />
-    <!-- PAGE LEVEL STYLES-->
-<link href="{{asset('asset')}}/assets/css/pages/auth-light.css" rel="stylesheet" />
+    <link href="{{asset('asset')}}/assets/css/main.css" rel="stylesheet" />
+        <!-- PAGE LEVEL STYLES-->
+    <link href="{{asset('asset')}}/assets/css/pages/auth-light.css" rel="stylesheet" />
 </head>
 
 <body class="bg-dark">
