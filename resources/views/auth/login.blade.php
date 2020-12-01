@@ -13,17 +13,38 @@
     <link href="{{asset('asset')}}/assets/css/main.css" rel="stylesheet" />
         <!-- PAGE LEVEL STYLES-->
     <link href="{{asset('asset')}}/assets/css/pages/auth-light.css" rel="stylesheet" />
+    <style>
+        .back{
+            background-image: url({{asset('upload/back1.jpg')}});
+        }
+        .h2S{
+            font-weight: bold;
+            padding-bottom:20px;
+            font-size: 40px;
+            color: #fff;
+        }
+        .shadow{
+        box-shadow: 0 .15rem 1.75rem 0 rgba(17, 1, 10, 0.9)!important;
+    }
+    .form-control{
+        padding: 1rem 1rem;
+    }
+    .lineB{
+            border-bottom: 2px solid #00a8ff;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
-<body class="bg-dark">
-    <div class="content">
-        <div class="pt-5 mt-5">
-            <h2 class="text-center text-white mb-5" >Welcome To POS System </h2>
-        </div>
-        
+<body class="back">
+    <div class="pt-5 mt-5">
+        <h2 class="text-center h2S" >Welcome To  POS & Inventory Management System </h2>
+    </div>
+    <div class="content shadow">
     <form id="login-form" action="{{route('login')}}" method="post">
         @csrf
-            <h2 class="login-title">Log in</h2>
+            <h2 class="login-title lineB">Log in</h2>
             <div class="mb-3 text-center">
                 @if (session()->has('error'))
                 <span class="text-red-800 bg-red-100 rounded py-2 px-4">{{session('error')}}</span>
@@ -45,12 +66,13 @@
                 <label class="ui-checkbox ui-checkbox-info">
                     <input type="checkbox">
                     <span class="input-span"></span>Remember me</label>
-                <a href="forgot_password.html">Forgot password?</a>
             </div>
             <div class="form-group">
                 <button class="btn btn-info btn-block" type="submit">Login</button>
             </div>
-        
+            <div class="text-center">
+                <a href="forgot_password.html">Forgot password?</a>
+            </div>
         </form>
     </div>
     <!-- BEGIN PAGA BACKDROPS-->
