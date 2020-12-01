@@ -46,8 +46,13 @@
             </li>
             <li>
                 <a href="calendar.html"><i class="sidebar-item-icon fa fa-archive"></i>
-                    <span class="nav-label">Stock</span>
+                    <span class="nav-label">Stock</span><i class="fa fa-angle-left arrow"></i>
                 </a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                    <a href="{{route('view.stock')}}"><i class="sidebar-item-icon fa fa-info-circle"></i>Stock Details</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-user"></i>

@@ -9,6 +9,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -99,6 +100,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     //purchase
     Route::get('create/purchase',[PurchaseController::class,'create'])->name('create.purchase');
+
+    //stock
+    Route::get('view/stock',[StockController::class,'view'])->name('view.stock');
 
 });
 
