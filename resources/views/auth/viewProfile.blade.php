@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-md-6">User Profile</div>
                         <div class="col-md-6">
-                            <a href="" class=" btn btn-sm btn-primary float-right">Back</a>
+                            <a href="{{ route('dashboard') }}" class=" btn btn-sm btn-primary float-right">Back</a>
                         </div>
                     </div>
                 </div>
