@@ -1,14 +1,5 @@
 @extends('layout.app')
 @section('content')
-<div class="page-heading">
-    <h1 class="page-title">Dashboard</h1>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html"><i class="la la-home font-20"></i></a>
-        </li>
-        <li class="breadcrumb-item active">All Attendence</li>
-    </ol>
-</div>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -19,6 +10,12 @@
     </div>
 @endif
 <div class="page-content fade-in-up">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">All Attendence</li>
+        </ol>
+    </nav>
     <div class="card shadow">
         <div class="card-header cardB bg-light">
             <div class="row">

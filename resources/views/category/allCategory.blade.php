@@ -1,15 +1,12 @@
 @extends('layout.app')
 @section('content')
-<div class="page-heading">
-    <h1 class="page-title">Dashboard</h1>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html"><i class="la la-home font-20"></i></a>
-        </li>
-        <li class="breadcrumb-item active">All Category</li>
-    </ol>
-</div>
 <div class="page-content fade-in-up">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">All Category</li>
+        </ol>
+    </nav>
     <div class="card">
         <div class="card-header bgView">
             <div class="row">
@@ -45,7 +42,7 @@
                                 <a href="{{route('delete.category',$row->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 <a href="{{route('view.category',$row->id)}}" class="btn btn-success"><i class="fa fa-eye"></i></a>
                             </td>
-                        </tr> 
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
