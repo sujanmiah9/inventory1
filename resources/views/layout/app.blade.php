@@ -33,19 +33,19 @@
             border-top: 5px solid #3498db;
         }
         label{
-    font-weight:bold;
-    }
-    .form-group input::-webkit-input-placeholder {
-        color:#ced6e0;
-        font-size:15px;
-    }
-    .form-group select{
-        font-size:15px;
-        color:#ced6e0;
-    }
-    .shadow{
-        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-    }
+        font-weight:bold;
+        }
+        .form-group input::-webkit-input-placeholder {
+            color:#ced6e0;
+            font-size:15px;
+        }
+        .form-group select{
+            font-size:15px;
+            color:#ced6e0;
+        }
+        .shadow{
+            box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+        }
     </style>
 </head>
 
