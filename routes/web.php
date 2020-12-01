@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['middleware'=>'auth'],function(){
-    
+
     Route::get('dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
     //Customer
@@ -36,7 +36,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('edit/customer{id}',[CustomerController::class, 'edit'])->name('edit.customer');
     Route::post('update/customer{id}', [CustomerController::class, 'update'])->name('update.customer');
 
-    //Employeee 
+    //Employeee
     Route::get('create/employee', [EmployeeController::class, 'create'])->name('create.employee');
     Route::post('store/employee', [EmployeeController::class, 'store'])->name('store.employee');
     Route::get('index/employee',  [EmployeeController::class, 'index'])->name('index.employee');
@@ -45,7 +45,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('edit/employee{id}',[EmployeeController::class, 'edit'])->name('edit.employee');
     Route::post('update/employee{id}', [EmployeeController::class, 'update'])->name('update.employee');
 
-    //suppiler 
+    //suppiler
     Route::get('create/supplier', [SupplierController::class, 'create'])->name('create.supplier');
     Route::post('store/supplier', [SupplierController::class, 'store'])->name('store.supplier');
     Route::get('index/supplier',  [SupplierController::class, 'index'])->name('index.supplier');
@@ -54,7 +54,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('edit/supplier{id}',[SupplierController::class, 'edit'])->name('edit.supplier');
     Route::post('update/supplier{id}', [SupplierController::class, 'update'])->name('update.supplier');
 
-    //category 
+    //category
     Route::get('create/category', [CategoryController::class, 'create'])->name('create.category');
     Route::post('store/category', [CategoryController::class, 'store'])->name('store.category');
     Route::get('index/category',  [CategoryController::class, 'index'])->name('index.category');
@@ -63,7 +63,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('edit/category{id}',[CategoryController::class, 'edit'])->name('edit.category');
     Route::post('update/category{id}', [CategoryController::class, 'update'])->name('update.category');
 
-    //Product 
+    //Product
     Route::get('create/product', [ProductController::class, 'create'])->name('create.product');
     Route::post('store/product', [ProductController::class, 'store'])->name('store.product');
     Route::get('index/product',  [ProductController::class, 'index'])->name('index.product');
@@ -72,7 +72,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('edit/product{id}',[ProductController::class, 'edit'])->name('edit.product');
     Route::post('update/product{id}', [ProductController::class, 'update'])->name('update.product');
 
-    //Expenses 
+    //Expenses
     Route::get('create/expense', [ExpenseController::class, 'create'])->name('create.expense');
     Route::post('store/expense', [ExpenseController::class, 'store'])->name('store.expense');
     Route::get('daily/expense',  [ExpenseController::class, 'daily'])->name('daily.expense');
@@ -98,6 +98,9 @@ Route::group(['middleware'=>'auth'],function(){
     //Logout
     Route::get('admin/logout',[LoginContoller::class,'logout'])->name('logout');
 
+    //profile
+    Route::get('admin/profile',[LoginContoller::class,'userProfile'])->name('user.profile');
+
     //purchase
     Route::get('create/purchase',[PurchaseController::class,'create'])->name('create.purchase');
 
@@ -111,6 +114,5 @@ Route::group(['middleware'=>'guest'],function(){
     Route::get('/',[LoginContoller::class,'showlogin'])->name('/');
     Route::post('admin/login',[LoginContoller::class,'loginprocess'])->name('login');
 });
-    
 
-    
+

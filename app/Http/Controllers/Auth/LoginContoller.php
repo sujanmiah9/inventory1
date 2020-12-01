@@ -16,14 +16,14 @@ class LoginContoller extends Controller
             'email'=>'required',
             'password'=>'required',
         ]);
-        
+
         $datacheak=$request->only('email','password');
-    
+
         if (auth()->attempt($datacheak)){
             if(auth()->user()->status==1){
                 return redirect()->route('dashboard');
             }
-        
+
         }else{
             session()->flash('error','Username Or Password Does Not Match');
             return redirect()->back();
@@ -34,5 +34,8 @@ class LoginContoller extends Controller
         Auth::logout();
         return redirect()->route('/');
 
+    }
+    public function userProfile(){
+        return view('auth.viewProfile');
     }
 }

@@ -31,7 +31,7 @@
                     <li class="dropdown-menu-header">
                         <div>
                             <span><strong>9 New</strong> Messages</span>
-                            <a class="pull-right" href="mailbox.html">view all</a>
+                            <a class="pull-right" href="">view all</a>
                         </div>
                     </li>
                     <li class="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">
@@ -140,8 +140,7 @@
                 <img src="{{asset('/'.auth()->user()->photo)}}" style="height:30px; width:30px; border-radius:50%;" />
                     <span></span>{{auth()->user()->name}}<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>Profile</a>
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-key"></i>Change Password</a>
+                    <a class="dropdown-item" href="{{route('user.profile')}}"><i class="fa fa-user"></i>Profile</a>
                     <li class="dropdown-divider"></li>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-power-off"></i>Logout</a>
                 </ul>
