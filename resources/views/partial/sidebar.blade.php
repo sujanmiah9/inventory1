@@ -39,7 +39,7 @@
                     <span class="nav-label">Purches</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('create.purchase')}}"><i class="sidebar-item-icon fa fa-shopping-basket"></i> Purches</a>
+                        <a href=""><i class="sidebar-item-icon fa fa-shopping-basket"></i> Purches</a>
                         <a href=""><i class="sidebar-item-icon fa fa-info-circle"></i>Purches Details</a>
                     </li>
                 </ul>

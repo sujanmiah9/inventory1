@@ -102,12 +102,13 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('admin/profile',[LoginContoller::class,'userProfile'])->name('user.profile');
 
     //purchase
-    Route::get('create/purchase',[PurchaseController::class,'create'])->name('create.purchase');
+
+
 
     //stock
     Route::get('view/stock',[StockController::class,'view'])->name('view.stock');
 
-});
+}); 
 
 Route::group(['middleware'=>'guest'],function(){
     //Login
